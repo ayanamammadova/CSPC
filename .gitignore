@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+
+# Dependency directories
+node_modules/
+jspm_packages/
+web_modules/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE and text editor folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Log files
+*.log
+logs/
