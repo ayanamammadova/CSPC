@@ -1,19 +1,18 @@
 import time
 from decay import simulate_loop, simulate
 
-
 N0 = 200000
 lam = 0.4
 dt = 0.05
 steps = 200
 seed = 0
 
-# Time pure-Python version
+# pure-Python 
 start = time.perf_counter()
 simulate_loop(N0, lam, dt, steps, seed)
 loop_time = time.perf_counter() - start
 
-# Time NumPy version
+# NumPy
 start = time.perf_counter()
 simulate(N0, lam, dt, steps, seed)
 numpy_time = time.perf_counter() - start
