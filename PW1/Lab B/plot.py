@@ -46,5 +46,4 @@ plt.tight_layout()
 # TODO 4: save the figure as figure.png
 
 plt.savefig("figure.png")
-
 plt.show()
