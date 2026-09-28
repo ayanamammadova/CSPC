@@ -20,8 +20,8 @@ Computer Science for Physics and Chemistry PW1 – Lab A
 ## PW1 - Lab B: Data, Plotting, and Automation
 Computer Science for Physics and Chemistry PW1 – Lab B
 **Data showed:**
-The graph decreases rapidly at first and then gradually slows down. The observed count starts at 5000 and reaches approximately 0 by the end of the observation period (19 seconds)
-**Comparison:**
-The observed data just follows the analitical data but with some negligible fluctuations. Analitical figure is calculated using formula (analitical = N0 * np.exp(-LAMBDA * t))
-**What Snakemake do:**
-Snakemake automates the creation of figure.png by running plot.py when the input data is newer than the generated figure or the figure is not created yet
+- The graph decreases rapidly at first and then gradually slows down. The observed count starts at 5000 and reaches approximately 0 by the end of the observation period (19 seconds)
+- **Comparison:**
+- The observed data just follows the analitical data but with some negligible fluctuations. Analitical figure is calculated using formula (analitical = N0 * np.exp(-LAMBDA * t))
+- **What Snakemake do:**
+- Snakemake automates the creation of figure.png by running plot.py when the input data is newer than the generated figure or the figure is not created yet
