@@ -19,7 +19,7 @@ a = b = 1.0
 #         It equals zero exactly at equilibrium.
 
 def k_imbalance(x):
-    return (2*x)**2 / ((1-x)*(1-x)) - K
+    return (2*x)**2 / ((a-x)*(b-x)) - K
 
 # TODO 2 (method 1): use scipy.optimize.newton to find the root of k_imbalance
 #         (start x0=0.5). This is root-finding.
@@ -37,14 +37,16 @@ x_slsqp = x.x[0]
 print("SLSQP x:", x_slsqp)
 print("Newton x:", x_newton)
 if x_slsqp // 0.01 == x_newton // 0.01:
-    print("SLSQP and Newton x are the same")
+    print("SLSQP and Newton agree")
+else:
+    print("SLSQP and Newton do not agree")
 
 # TODO 4: report the equilibrium amounts (H2, I2, HI), and plot how the three
 #         amounts change with the extent x, marking the equilibrium. Save
 #         equilibrium.png.
 
-n_H2 = 1-x_slsqp
-n_I2 = 1-x_slsqp
+n_H2 = a-x_slsqp
+n_I2 = b-x_slsqp
 n_HI =2*x_slsqp
 
 print("H2:", n_H2)
@@ -53,9 +55,9 @@ print("HI:", n_HI)
 
 x_values = np.linspace(0, 0.99, 200)
 
-H2 = 1 - x_values
-I2 = 1 - x_values
-HI = 2 * x_values
+H2 = a-x_values
+I2 = b-x_values
+HI = 2*x_values
 
 plt.plot(x_values, H2, label="H2")
 plt.plot(x_values, I2, label="I2")
