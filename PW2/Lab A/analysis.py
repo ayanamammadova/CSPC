@@ -42,25 +42,25 @@ fig, axes = plt.subplots(3, 1, sharex=True, figsize=(8, 10))
 axes[0].plot(t, y_recover, color="red")
 axes[0].plot(t, y)
 axes[0].grid(True)
-axes[0].set_title("Free-Fall Motion")
-axes[0].set_ylabel("Position (m)")
-axes[0].set_xlabel("Time (s)")
+axes[0].set_title("freefall motion")
+axes[0].set_ylabel("position (m)")
+axes[0].set_xlabel("time (s)")
 # velocity
 axes[1].plot(t, v)
 axes[1].plot(t, v_recover, color="red")
 axes[1].grid(True)
-axes[1].set_ylabel("Velocity (m/s)")
-axes[1].set_xlabel("Time (s)")
+axes[1].set_ylabel("velocity (m/s)")
+axes[1].set_xlabel("time (s)")
 # acceleration
 axes[2].plot(t, a)
 axes[2].grid(True)
 axes[2].axhline(-9.81, linestyle="--", color="green")
-axes[2].set_ylabel("Acceleration (m/s²)")
-axes[2].set_xlabel("Time (s)")
+axes[2].set_ylabel("acceleration (m/s²)")
+axes[2].set_xlabel("time (s)")
 
 plt.tight_layout()
 plt.savefig("motion.png")
-# plt.show()
+plt.show()
 
 
 
@@ -70,25 +70,25 @@ data2 = np.loadtxt("trajectory.csv", delimiter=",", skiprows=1)
 
 t2 = data2[:, 0]
 x2 = data2[:, 1]
-y2 = data2[:, 1]
+y2 = data2[:, 2]
 
 vx = np.gradient(x2, t2)
 vy = np.gradient(y2, t2)
 speed = np.sqrt(vx**2 + vy**2)
-fig2, axes2 = plt.subplots(2, 1, sharex=True, figsize=(8, 10))
+fig2, axes2 = plt.subplots(2, 1, figsize=(8, 10))
 
 # position
 axes2[0].plot(x2, y2)
 axes2[0].grid(True)
-axes2[0].set_title("Plane 2D Trajectory")
+axes2[0].set_title("Plane 2D trajectory")
 axes2[0].set_ylabel("y")
 axes2[0].set_xlabel("x")
 # velocity
 axes2[1].plot(t2, speed)
 axes2[1].grid(True)
-axes2[1].set_title("Speed vs Time")
-axes2[1].set_ylabel("Speed")
-axes2[1].set_xlabel("Time (s)")
+axes2[1].set_title("speed/time")
+axes2[1].set_ylabel("speed")
+axes2[1].set_xlabel("time")
 
 plt.tight_layout()
 plt.savefig("motion2.png")
