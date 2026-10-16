@@ -11,4 +11,4 @@ venv/
 env/
 
 # Generated images
-*.png
+# *.png
